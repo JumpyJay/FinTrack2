@@ -81,7 +81,9 @@ We use Git for version control to enable effective collaboration, track changes,
 
 2. **Install dependencies**:
     ```bash
-    npm install
+    npx expo install expo-linear-gradient
+    npx expo install firebase
+    npm i @gluestack-ui/themed-native-base react-native-svg@13.4.0
     ```
 
 3. **Start the Expo development server**:
