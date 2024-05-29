@@ -24,6 +24,7 @@ if (firebase.getApps.length === 0) {
 } else {
   app = firebase.app();
 }
+
 const analytics = firebase.getAnalytics(app);
 // For more information on how to access Firebase in your project,
 // see the Firebase documentation: https://firebase.google.com/docs/web/setup#access-firebase

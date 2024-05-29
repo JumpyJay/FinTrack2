@@ -84,6 +84,13 @@ We use Git for version control to enable effective collaboration, track changes,
     npx expo install expo-linear-gradient
     npx expo install firebase
     npm i @gluestack-ui/themed-native-base react-native-svg@13.4.0
+    npm install react-native-chart-kit
+    npm install @react-navigation/bottom-tabs
+    npm install @react-navigation/native-stack
+    npx expo install firebase
+    npm install nativewind
+    npm install --save-dev tailwindcss@3.3.2
+    npm install @reduxjs/toolkit react-redux
     ```
 
 3. **Start the Expo development server**:
