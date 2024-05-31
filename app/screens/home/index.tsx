@@ -1,126 +1,59 @@
+import EmptyList from '@/components/EmptyList';
+import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, SafeAreaView, TouchableOpacity } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { Text, View, Image, TouchableOpacity, FlatList } from 'react-native';
 
-const HomeScreen = () => {
+const transactionsData = [
+  { id: "1", description: "Coffee", amount: -5, date: "2024-05-01" },
+  { id: "2", description: "Groceries", amount: -30, date: "2024-05-02" },
+  { id: "3", description: "Salary", amount: 2000, date: "2024-05-03" },
+  { id: "4", description: "Rent", amount: -500, date: "2024-05-04" },
+  { id: "5", description: "Dinner", amount: -50, date: "2024-05-05" },
+  { id: "6", description: "Grab Ride", amount: -100, date: "2024-05-04" },
+  { id: "7", description: "Milk Tea with Pearl", amount: -10, date: "2024-05-05" },
+];
+
+export default function App() {
   return (
-    <SafeAreaView style={styles.safeArea}>
-      <ScrollView contentContainerStyle={styles.container}>
-        <Text style={styles.title}>Dashboard</Text>
-        
-        {/* Summary Chart */}
-        <View style={styles.chartContainer}>
-          <Text style={styles.sectionTitle}>Summary</Text>
-          <View style={styles.pieChart}>
-            {/* Placeholder for Pie Chart */}
-            <Ionicons name="pie-chart" size={100} color="#6200EE" />
-          </View>
-        </View>
-        
-        {/* Recent Transactions */}
-        <View style={styles.transactionsContainer}>
-          <Text style={styles.sectionTitle}>Recent Transactions</Text>
-          <View style={styles.transactionItem}>
-            <Text style={styles.transactionText}>Coffee</Text>
-            <Text style={styles.transactionAmount}>$5</Text>
-          </View>
-          <View style={styles.transactionItem}>
-            <Text style={styles.transactionText}>Groceries</Text>
-            <Text style={styles.transactionAmount}>$30</Text>
-          </View>
-          <View style={styles.transactionItem}>
-            <Text style={styles.transactionText}>Rent</Text>
-            <Text style={styles.transactionAmount}>$500</Text>
-          </View>
-        </View>
-
-        {/* Quick Links */}
-        <View style={styles.quickLinksContainer}>
-          <TouchableOpacity style={styles.quickLink}>
-            <Text style={styles.quickLinkText}>Add Expense</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.quickLink}>
-            <Text style={styles.quickLinkText}>Set Budget</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.quickLink}>
-            <Text style={styles.quickLinkText}>Add Goal</Text>
+    <View className="flex-1 bg-white">
+      <View className="flex-row justify-between items-center bg-white p-4">
+        <Text className="font-bold text-3xl shadow-sm text-[#6200EE]">FinTrack</Text>
+        <StatusBar style="auto" />
+      </View>
+      <View className="flex-row justify-center items-center bg-blue-200 rounded-xl mx-4 mb-4">
+        <Image source={require('../../../assets/images/savings.png')} className="h-60 w-60" />
+      </View>
+      <View className="px-4 space-y-3">
+        <View className="flex-row justify-between">
+          <Text className="font-bold text-xl">Recent Spendings</Text>
+          <TouchableOpacity className="p-2 px-3 bg-white border border-gray-200 rounded-full">
+            <Text>Add Transaction</Text>
           </TouchableOpacity>
         </View>
-      </ScrollView>
-    </SafeAreaView>
+        <View style={{height: 430}}>
+          <FlatList 
+            data={transactionsData}
+            ListEmptyComponent={<EmptyList message={"You have not added any transactions"}/>}
+            showsVerticalScrollIndicator={false}
+            keyExtractor={(item) => item.id}
+            renderItem={({item}) => {
+              return (
+                <TouchableOpacity className="bg-white p-3 rounded-2xl mb-3 shadown-sm">
+                  <View className="flex-row justify-between">
+                  <View className="flex-col">
+                  <Text className="font-bold text-lg">{item.description}</Text>
+                  <Text className="font-sm">{item.date}</Text>
+                  </View>
+                    <Text className={`text-lg font-bold ${item.amount < 0 ? "text-red-600" : "text-green-600"}`}>
+                      ${Math.abs(item.amount).toFixed(2)}
+                    </Text>
+                  </View>
+                </TouchableOpacity>
+              )
+            }}
+          />
+        </View>
+      </View>
+    </View>
   );
-};
-
-export default HomeScreen;
-
-const styles = StyleSheet.create({
-  safeArea: {
-    flex: 1,
-    backgroundColor: '#FFFFFF',
-  },
-  
-  container: {
-    flexGrow: 1,
-    padding: 20,
-    backgroundColor: '#FFFFFF',
-    alignItems: 'center',
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20,
-    color: '#6200EE',
-  },
-  chartContainer: {
-    width: '100%',
-    padding: 20,
-    backgroundColor: '#f8f9fa',
-    borderRadius: 10,
-    marginBottom: 20,
-  },
-  sectionTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
-  pieChart: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: 200,
-  },
-  transactionsContainer: {
-    width: '100%',
-    padding: 20,
-    backgroundColor: '#f8f9fa',
-    borderRadius: 10,
-    marginBottom: 20,
-  },
-  transactionItem: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 10,
-  },
-  transactionText: {
-    fontSize: 16,
-  },
-  transactionAmount: {
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  quickLinksContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: '100%',
-  },
-  quickLink: {
-    backgroundColor: '#6200EE',
-    padding: 10,
-    borderRadius: 5,
-    alignItems: 'center',
-    width: '30%',
-  },
-  quickLinkText: {
-    color: '#FFFFFF',
-    fontWeight: 'bold',
-  },
-});
+}

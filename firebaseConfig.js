@@ -1,13 +1,13 @@
-import * as firebase from "firebase/app";
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth"
+import { getFirestore } from "firebase/firestore"
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Optionally import the services that you want to use
-// import {...} from "firebase/auth";
-// import {...} from "firebase/database";
-// import {...} from "firebase/firestore";
-// import {...} from "firebase/functions";
-// import {...} from "firebase/storage";
-
-// Initialize Firebase
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyC6qwkxafuYjQFm9IgPJHDZY0RWdcCwT8E",
   authDomain: "fintrack-342f6.firebaseapp.com",
@@ -18,17 +18,8 @@ const firebaseConfig = {
   measurementId: "G-4TMND881RZ"
 };
 
-let app;
-if (firebase.getApps.length === 0) {
-  app = firebase.initializeApp(firebaseConfig);
-} else {
-  app = firebase.app();
-}
-
-const analytics = firebase.getAnalytics(app);
-// For more information on how to access Firebase in your project,
-// see the Firebase documentation: https://firebase.google.com/docs/web/setup#access-firebase
-
-const auth = firebase.auth();
-
-export { auth };
+// Initialize Firebase
+export const FINTRACK_APP = initializeApp(firebaseConfig);
+export const FINTRACK_AUTH = getAuth(FINTRACK_APP);
+export const FINTRACK_DB = getFirestore(FINTRACK_APP);
+const analytics = getAnalytics(FINTRACK_APP);
