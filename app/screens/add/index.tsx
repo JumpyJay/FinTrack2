@@ -1,148 +1,58 @@
-import {
-    Box,
-    FormControl,
-    Input,
-    NativeBaseProvider,
-    ScrollView,
-    VStack,
-    Text,
-    Button,
-  } from "@gluestack-ui/themed-native-base";
-  import React from "react";
-  import { StyleSheet, SafeAreaView } from "react-native";
-  import { LinearGradient } from "expo-linear-gradient";
-  
-  const AddScreen = () => {
-    const [footnoteData, setFootnoteData] = React.useState("");
-    const [amountData, setAmountData] = React.useState("");
-  
-    const handleSave = () => {
-      // Here you can handle the saving of data to your backend
-      console.log("Amount:", amountData);
-      console.log("Footnote:", footnoteData);
-      // Resetting the form after save
-      setAmountData("");
-      setFootnoteData("");
-    };
-  
-    return (
-      <SafeAreaView className="flex-1">
-        <NativeBaseProvider>
-          <ScrollView contentContainerStyle={styles.container}>
-            <Text style={styles.title}>Add spendings</Text>
-            <Box
-              width="100%"
-              heihgt="18%"
-              alignSelf="center"
-              bg="white"
-              style={styles.box}
-            >
-              <VStack width="95%" mx="3" mb="3">
-                <FormControl isRequired>
-                  <Text style={styles.formText}>Amount</Text>
-                  <Input
-                    placeholder="0"
-                    keyboardType="numeric"
-                    onChangeText={(value: any) => setAmountData(value)}
-                    value={amountData}
-                    style={styles.input}
-                  />
-                  <FormControl.HelperText _text={{ fontSize: "xs" }}>
-                    Amount should be a numeric value.
-                  </FormControl.HelperText>
-                  <FormControl.ErrorMessage _text={{ fontSize: "xs" }}>
-                    Error Amount
-                  </FormControl.ErrorMessage>
-                </FormControl>
-              </VStack>
-            </Box>
-            <Box
-              width="100%"
-              height="18%"
-              alignSelf="center"
-              bg="white"
-              style={styles.box}
-            >
-              <VStack width="95%" mx="3">
-                <FormControl isRequired>
-                  <Text style={styles.formText}>Footnote</Text>
-                  <Input
-                    placeholder="Description"
-                    onChangeText={(value: any) => setFootnoteData(value)}
-                    value={footnoteData}
-                    style={styles.input}
-                  />
-                  <FormControl.HelperText _text={{ fontSize: "xs" }}>
-                    Footnote should contain at least 3 characters.
-                  </FormControl.HelperText>
-                  <FormControl.ErrorMessage _text={{ fontSize: "xs" }}>
-                    Error Footnote
-                  </FormControl.ErrorMessage>
-                </FormControl>
-              </VStack>
-            </Box>
-            <Box margin={4} height="30%" width="95%">
-              <LinearGradient
-                colors={["rgba(110, 75, 244, 0.74)", "transparent"]}
-                style={styles.textgradient}
-              >
-                <Text style={styles.gradientText}>Photo feature to be added</Text>
-              </LinearGradient>
-            </Box>
-            <Button onPress={handleSave} style={styles.saveButton}>
-              Save
-            </Button>
-          </ScrollView>
-        </NativeBaseProvider>
-      </SafeAreaView>
-    );
-  };
-  
-  export default AddScreen;
-  
-  const styles = StyleSheet.create({
-    safeArea: {
-      flex: 1,
-      backgroundColor: "#FFFFFF",
-    },
-    container: {
-      flexGrow: 1,
-      paddingTop: 15,
-      padding: 20,
-      backgroundColor: "#FFFFFF",
-      alignItems: "center",
-    },
-    title: {
-      fontSize: 30,
-      lineHeight: 36,
-      fontWeight: "bold",
-      marginBottom: 20,
-      color: "#6200EE",
-    },
-    formText: {
-      fontSize: 18,
-      fontWeight: "bold",
-      marginBottom: 7,
-    },
-    box: {
-      marginTop: 20,
-    },
-    input: {
-      marginBottom: 5,
-    },
-    textgradient: {
-      flex: 1,
-      justifyContent: "center",
-      alignItems: "center",
-      borderRadius: 30,
-    },
-    gradientText: {
-      fontWeight: "bold",
-      fontSize: 18,
-      color: "black",
-    },
-    saveButton: {
-      marginTop: 20,
-      backgroundColor: "#6E4BF4",
-    },
-  });
+import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native'
+import React, { useState } from 'react'
+import BackButton from '@/components/BackButton'
+import { useNavigation } from '@react-navigation/native';
+
+export default function AddScreen() {
+  const [category, setCategory] = useState("");
+  const [description, setDescription] = useState("");
+  const [date, setDate] = useState("");
+  const [amount, setAmount] = useState("");
+
+  const navigation = useNavigation();
+
+  const handleAddTransaction = () => {
+    if (category && description && date && amount) {
+      console.log(category);
+      console.log(description);
+      console.log(date);
+      console.log(amount);
+      navigation.navigate("Main"); 
+    } else {
+      // Error
+    }
+  }
+  return (
+    <View className=" h-full justify-between">
+      <View className="flex mx-4">
+        <View>
+          <View className="absolute z-10">
+            <BackButton />
+          </View>
+          <Text className="text-xl font-bold text-[#6200EE] text-center">Add Transaction</Text>
+        </View>
+
+        <View className="flex-row justify-center my-3 mt-5">
+          <Image source={require('../../../assets/images/fintrack-logo.png')} className="h-32 w-72"/>
+        </View>
+
+        <View className="space-y-2 mx-2">
+          <Text className="text-lg font-bold">Category</Text>
+          <TextInput value={category} placeholder="Write a category" onChangeText={value => setCategory(value)} className="p-4 bg-white rounded-full mb-3"/>
+          <Text className="text-lg font-bold">Description</Text>
+          <TextInput value={description} placeholder="Write a description" onChangeText={value => setDescription(value)} className="p-4 bg-white rounded-full mb-3"/>
+          <Text className="text-lg font-bold">Date</Text>
+          <TextInput value={date} placeholder="31/05/2024" onChangeText={value => setDate(value)} className="p-4 bg-white rounded-full mb-3"/>
+          <Text className="text-lg font-bold">Amount</Text>
+          <TextInput value={amount} placeholder="$10.00" onChangeText={value => setAmount(value)} className="p-4 bg-white rounded-full mb-3"/>
+        </View>
+      </View>
+
+      <View>
+        <TouchableOpacity onPress={handleAddTransaction}className="my-6 rounded-full p-3 shadow-sm mx-2 bg-[#6200EE]">
+          <Text className="text-center text-white text-lg font-bold">Add</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  )
+}

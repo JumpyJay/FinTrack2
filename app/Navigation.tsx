@@ -1,102 +1,43 @@
 import React from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Ionicons } from "@expo/vector-icons";
-import HomeScreen from "./screens/home";
+import { FINTRACK_AUTH } from "@/firebaseConfig";
+import { onAuthStateChanged } from "firebase/auth";
+import BottomNavigation from "./BottomNavigation"; // Updated import
+import WelcomeScreen from "./screens/welcome";
 import AddScreen from "./screens/add";
-import ProfileScreen from "./screens/profile";
-import LeaderboardScreen from "./screens/leaderboard";
-import TransactionsScreen from "./screens/transactions";
+import SignInScreen from "./screens/signin";
+import SignUpScreen from "./screens/signup";
+import { useDispatch, useSelector } from "react-redux";
+import { setUser } from "./slices/user";
 
-const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
-const HomeStack = () => (
-  <Stack.Navigator screenOptions={{ headerShown: false }}>
-    <Stack.Screen name="HomeStack" component={HomeScreen} />
-  </Stack.Navigator>
-);
+export default function Navigation() {
+  const {user} = useSelector(state => state.user);
 
-const AddStack = () => (
-  <Stack.Navigator screenOptions={{ headerShown: false }}>
-    <Stack.Screen name="AddStack" component={AddScreen} />
-  </Stack.Navigator>
-);
+  const dispatch = useDispatch();
 
-const ProfileStack = () => (
-  <Stack.Navigator screenOptions={{ headerShown: false }}>
-    <Stack.Screen name="ProfileStack" component={ProfileScreen} />
-  </Stack.Navigator>
-);
+  onAuthStateChanged(FINTRACK_AUTH, u => {
+    // console.log("got user:", u);
+    dispatch(setUser(u))
+  })
 
-const LeaderboardStack = () => (
-  <Stack.Navigator screenOptions={{ headerShown: false }}>
-    <Stack.Screen name="LeaderboardStack" component={LeaderboardScreen} />
-  </Stack.Navigator>
-);
-
-const TransactionsStack = () => (
-  <Stack.Navigator screenOptions={{ headerShown: false }}>
-    <Stack.Screen name="TransactionsStack" component={TransactionsScreen} />
-  </Stack.Navigator>
-);
-
-const Navigation = () => {
-  return (
-    <Tab.Navigator
-      initialRouteName="Home"
-      screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
-          let iconName: keyof typeof Ionicons.glyphMap | undefined;
-
-          if (route.name === "Home") {
-            iconName = focused ? "home" : "home-outline";
-          } else if (route.name === "Add") {
-            iconName = focused ? "add-circle" : "add-circle-outline";
-          } else if (route.name === "Leaderboard") {
-            iconName = focused ? "trophy" : "trophy-outline";
-          } else if (route.name === "Transactions") {
-            iconName = focused ? "wallet" : "wallet-outline";
-          } else if (route.name === "Profile") {
-            iconName = focused ? "person" : "person-outline";
-          }
-
-          if (iconName) {
-            return <Ionicons name={iconName} size={size} color={color} />;
-          }
-        },
-        tabBarActiveTintColor: "#6200EE",
-        tabBarInactiveTintColor: "gray",
-        tabBarStyle: { paddingBottom: 0 },
-      })}
-    >
-      <Tab.Screen
-        name="Home"
-        component={HomeStack}
-        options={{ headerShown: false }}
-      />
-      <Tab.Screen
-        name="Transactions"
-        component={TransactionsStack}
-        options={{ headerShown: false }}
-      />
-      <Tab.Screen
-        name="Add"
-        component={AddStack}
-        options={{ headerShown: false }}
-      />
-      <Tab.Screen
-        name="Leaderboard"
-        component={LeaderboardStack}
-        options={{ headerShown: false }}
-      />
-      <Tab.Screen
-        name="Profile"
-        component={ProfileStack}
-        options={{ headerShown: false }}
-      />
-    </Tab.Navigator>
-  );
-};
-
-export default Navigation;
+  if (user) {
+    return (
+      <Stack.Navigator initialRouteName="Main" screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Main" component={BottomNavigation} />
+        <Stack.Screen name="Add" component={AddScreen} />
+      </Stack.Navigator>
+    ); 
+  } else {
+    return (
+      <Stack.Navigator initialRouteName="Welcome" screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Welcome" component={WelcomeScreen} />
+        <Stack.Screen name="SignIn" component={SignInScreen} options={{presentation: 'modal'}} />
+        <Stack.Screen name="SignUp" component={SignUpScreen} options={{presentation: 'modal'}} />
+        <Stack.Screen name="Main" component={BottomNavigation} />
+        <Stack.Screen name="Add" component={AddScreen} />
+      </Stack.Navigator>
+    );
+  }
+}

@@ -1,4 +1,5 @@
 import EmptyList from '@/components/EmptyList';
+import { useNavigation } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Text, View, Image, TouchableOpacity, FlatList } from 'react-native';
@@ -14,6 +15,7 @@ const transactionsData = [
 ];
 
 export default function App() {
+  const navigation = useNavigation();
   return (
     <View className="flex-1 bg-white">
       <View className="flex-row justify-between items-center bg-white p-4">
@@ -26,7 +28,7 @@ export default function App() {
       <View className="px-4 space-y-3">
         <View className="flex-row justify-between">
           <Text className="font-bold text-xl">Recent Spendings</Text>
-          <TouchableOpacity className="p-2 px-3 bg-white border border-gray-200 rounded-full">
+          <TouchableOpacity onPress={() => navigation.navigate("Add")}className="p-2 px-3 bg-white border border-gray-200 rounded-full">
             <Text>Add Transaction</Text>
           </TouchableOpacity>
         </View>
