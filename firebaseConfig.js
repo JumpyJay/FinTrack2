@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth"
+import { initializeAuth, getReactNativePersistence } from "firebase/auth";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getFirestore, collection } from "firebase/firestore"
 // import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -20,7 +21,10 @@ const firebaseConfig = {
 
 // Initialize Firebase
 export const FINTRACK_APP = initializeApp(firebaseConfig);
-export const FINTRACK_AUTH = getAuth(FINTRACK_APP);
+// Initialize Firebase Auth with AsyncStorage for persistence
+export const FINTRACK_AUTH = initializeAuth(FINTRACK_APP, {
+  persistence: getReactNativePersistence(AsyncStorage)
+});
 export const FINTRACK_DB = getFirestore(FINTRACK_APP);
 
 export const transactionsRef = collection(FINTRACK_DB, 'transactions');
