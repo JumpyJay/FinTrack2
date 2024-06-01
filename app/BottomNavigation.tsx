@@ -3,7 +3,6 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Ionicons } from "@expo/vector-icons";
 import HomeScreen from "./screens/home";
-import AddScreen from "./screens/add";
 import ProfileScreen from "./screens/profile";
 import LeaderboardScreen from "./screens/leaderboard";
 import TransactionsScreen from "./screens/transactions";
@@ -14,12 +13,6 @@ const Stack = createNativeStackNavigator();
 const HomeStack = () => (
   <Stack.Navigator screenOptions={{ headerShown: false }}>
     <Stack.Screen name="HomeStack" component={HomeScreen} />
-  </Stack.Navigator>
-);
-
-const AddStack = () => (
-  <Stack.Navigator screenOptions={{ headerShown: false }}>
-    <Stack.Screen name="AddStack" component={AddScreen} />
   </Stack.Navigator>
 );
 
@@ -51,8 +44,6 @@ const BottomNavigation = () => {
 
           if (route.name === "Home") {
             iconName = focused ? "home" : "home-outline";
-          } else if (route.name === "Add") {
-            iconName = focused ? "add-circle" : "add-circle-outline";
           } else if (route.name === "Leaderboard") {
             iconName = focused ? "trophy" : "trophy-outline";
           } else if (route.name === "Transactions") {
@@ -67,7 +58,7 @@ const BottomNavigation = () => {
         },
         tabBarActiveTintColor: "#6200EE",
         tabBarInactiveTintColor: "gray",
-        tabBarStyle: { paddingBottom: 0 },
+        tabBarStyle: { paddingBottom: 0, marginBottom: 0, paddingTop: 30 },
       })}
     >
       <Tab.Screen

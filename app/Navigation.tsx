@@ -24,7 +24,7 @@ export default function Navigation() {
 
   if (user) {
     return (
-      <Stack.Navigator initialRouteName="Main" screenOptions={{ headerShown: false}}>
+      <Stack.Navigator initialRouteName="Main" screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Main" component={BottomNavigation} />
         <Stack.Screen name="Add" component={AddScreen} />
       </Stack.Navigator>
