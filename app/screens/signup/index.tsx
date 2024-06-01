@@ -3,16 +3,28 @@ import React, { useState } from 'react'
 import BackButton from '@/components/BackButton'
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { FINTRACK_AUTH } from '@/firebaseConfig';
+import { useDispatch, useSelector } from 'react-redux';
+import { setUserLoading } from '@/app/slices/user';
+import Loading from '@/components/Loading';
 
 export default function SignUpScreen() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const {userLoading} = useSelector(state => state.user)
+  const dispatch = useDispatch();
 
   const handleSignUp = async () => {
     if (email && password) {
-      await createUserWithEmailAndPassword(FINTRACK_AUTH, email, password);
+      try {
+        dispatch(setUserLoading(true))
+        await createUserWithEmailAndPassword(FINTRACK_AUTH, email, password);
+        dispatch(setUserLoading(false)) 
+      } catch (e) {
+        dispatch(setUserLoading(false))
+        alert("Invalid Email and Password")
+      }
     } else {
-      alert("You must have both email and password to sign up!")
+      alert("You must have both Email and Password to sign up!")
     }
   }
   return (
@@ -38,9 +50,15 @@ export default function SignUpScreen() {
       </View>
 
       <View>
-        <TouchableOpacity onPress={handleSignUp}className="my-6 rounded-full p-3 shadow-sm mx-2 bg-[#6200EE]">
-          <Text className="text-center text-white text-lg font-bold">Sign Up</Text>
-        </TouchableOpacity>
+        {
+          userLoading ? (
+            <Loading />
+          ) : (
+            <TouchableOpacity onPress={handleSignUp}className="my-6 rounded-full p-3 shadow-sm mx-2 bg-[#6200EE]">
+              <Text className="text-center text-white text-lg font-bold">Sign Up</Text>
+            </TouchableOpacity>
+          )
+        }
       </View>
     </View>
   )

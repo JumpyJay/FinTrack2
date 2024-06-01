@@ -2,7 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth"
 import { getFirestore, collection } from "firebase/firestore"
-import { getAnalytics } from "firebase/analytics";
+// import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -24,4 +24,6 @@ export const FINTRACK_AUTH = getAuth(FINTRACK_APP);
 export const FINTRACK_DB = getFirestore(FINTRACK_APP);
 
 export const transactionsRef = collection(FINTRACK_DB, 'transactions');
-const analytics = getAnalytics(FINTRACK_APP);
+export const leaderboardRef = collection(FINTRACK_DB, 'leaderboard');
+export const budgetRef = collection(FINTRACK_DB, 'budget');
+// const analytics = getAnalytics(FINTRACK_APP);

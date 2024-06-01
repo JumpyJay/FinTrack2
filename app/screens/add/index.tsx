@@ -2,24 +2,36 @@ import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import BackButton from '@/components/BackButton'
 import { useNavigation } from '@react-navigation/native';
+import Loading from '@/components/Loading';
+import { addDoc } from 'firebase/firestore';
+import { transactionsRef } from '@/firebaseConfig';
+import { useSelector } from 'react-redux';
 
 export default function AddScreen() {
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
   const [date, setDate] = useState("");
   const [amount, setAmount] = useState("");
-
+  const [loading, setLoading] = useState(false);
+  const {user} = useSelector(state => state.user);
   const navigation = useNavigation();
 
-  const handleAddTransaction = () => {
+  const handleAddTransaction = async () => {
     if (category && description && date && amount) {
-      console.log(category);
-      console.log(description);
-      console.log(date);
-      console.log(amount);
-      navigation.navigate("Main"); 
+      setLoading(true);
+      let doc = await addDoc(transactionsRef, {
+        category,
+        description,
+        date,
+        amount,
+        userId: user.uid
+      });
+      setLoading(false);
+      if (doc && doc.id) {
+        navigation.goBack();
+      }
     } else {
-      // Error
+      alert("All fields must have inputs!");
     }
   }
   return (
@@ -49,9 +61,15 @@ export default function AddScreen() {
       </View>
 
       <View>
-        <TouchableOpacity onPress={handleAddTransaction}className="my-6 rounded-full p-3 shadow-sm mx-2 bg-[#6200EE]">
-          <Text className="text-center text-white text-lg font-bold">Add</Text>
-        </TouchableOpacity>
+        {
+          loading ? (
+            <Loading />
+          ) : (
+            <TouchableOpacity onPress={handleAddTransaction}className="my-6 rounded-full p-3 shadow-sm mx-2 bg-[#6200EE]">
+              <Text className="text-center text-white text-lg font-bold">Add</Text>
+            </TouchableOpacity>
+          )
+        }
       </View>
     </View>
   )

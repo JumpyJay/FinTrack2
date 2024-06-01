@@ -91,7 +91,7 @@ We use Git for version control to enable effective collaboration, track changes,
     npm install nativewind
     npm install --save-dev tailwindcss@3.3.2
     npm install @reduxjs/toolkit react-redux
-    npm install react-native-snackbar --save
+    npm install @react-native-async-storage/async-storage
     ```
 
 3. **Start the Expo development server**:

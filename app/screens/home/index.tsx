@@ -1,25 +1,47 @@
 import EmptyList from '@/components/EmptyList';
-import { FINTRACK_AUTH } from '@/firebaseConfig';
-import { useNavigation } from '@react-navigation/native';
+import { FINTRACK_AUTH, transactionsRef } from '@/firebaseConfig';
+import { useIsFocused, useNavigation } from '@react-navigation/native';
 import { signOut } from 'firebase/auth';
-import React from 'react';
+import { getDocs, query, where } from 'firebase/firestore';
+import React, { useEffect, useState } from 'react';
 import { Text, View, Image, TouchableOpacity, FlatList } from 'react-native';
+import { useSelector } from 'react-redux';
 
-const transactionsData = [
-  { id: "1", description: "Coffee", amount: -5, date: "2024-05-01" },
-  { id: "2", description: "Groceries", amount: -30, date: "2024-05-02" },
-  { id: "3", description: "Salary", amount: 2000, date: "2024-05-03" },
-  { id: "4", description: "Rent", amount: -500, date: "2024-05-04" },
-  { id: "5", description: "Dinner", amount: -50, date: "2024-05-05" },
-  { id: "6", description: "Grab Ride", amount: -100, date: "2024-05-04" },
-  { id: "7", description: "Milk Tea with Pearl", amount: -10, date: "2024-05-05" },
-];
+// const transactionsData = [
+//   { id: "1", description: "Coffee", amount: -5, date: "2024-05-01" },
+//   { id: "2", description: "Groceries", amount: -30, date: "2024-05-02" },
+//   { id: "3", description: "Salary", amount: 2000, date: "2024-05-03" },
+//   { id: "4", description: "Rent", amount: -500, date: "2024-05-04" },
+//   { id: "5", description: "Dinner", amount: -50, date: "2024-05-05" },
+//   { id: "6", description: "Grab Ride", amount: -100, date: "2024-05-04" },
+//   { id: "7", description: "Milk Tea with Pearl", amount: -10, date: "2024-05-05" },
+// ]; OLD
 
 export default function HomeScreen() {
   const navigation = useNavigation();
+
+  const {user} = useSelector(state => state.user);
+  const [transactionsData, setTransactions] = useState([])
+
+  const isFocused = useIsFocused();
+
+  const fetchTransactions = async () => {
+    const q = query(transactionsRef, where("userId", "==", user.uid))
+    const querySnapShot = await getDocs(q);
+    let data = [];
+    querySnapShot.forEach(doc => {
+      data.push({...doc.data(), id: doc.id});
+    });
+    setTransactions(data);
+  };
+
+  useEffect(() => {
+    if (isFocused) fetchTransactions();
+  },[isFocused])
+  
   const handleLogOut = async () => {
     await signOut(FINTRACK_AUTH);
-    navigation.navigate("Welcome")
+    navigation.navigate("Welcome");
   }
   
   return (
