@@ -45,24 +45,24 @@ export default function HomeScreen() {
   }
   
   return (
-    <View className="flex-1 bg-white">
-      <View className="flex-row justify-between items-center bg-white p-4">
-        <Text className="font-bold text-3xl shadow-sm text-[#6200EE]">FinTrack</Text>
+    <View className="flex-1 bg-[#6200EE]">
+      <View className="flex-row justify-between items-center bg-[#6200EE] p-4">
+        <Text className="font-bold text-3xl shadow-sm text-white">FinTrack</Text>
         <TouchableOpacity onPress={handleLogOut} className="p-2 px-3 bg-white border border-gray-200 rounded-full">
-          <Text>Logout</Text>
+          <Text className="font-bold">Logout</Text>
         </TouchableOpacity>
       </View>
       <View className="flex-row justify-center items-center bg-blue-200 rounded-xl mx-4 mb-4">
         <Image source={require('../../../assets/images/savings.png')} className="h-60 w-60" />
       </View>
-      <View className="px-4 space-y-3">
+      <View className="px-4 space-y-3 rounded-xl mx-4 mb-4 py-4 bg-white">
         <View className="flex-row justify-between">
           <Text className="font-bold text-xl">Recent Spendings</Text>
-          <TouchableOpacity onPress={() => navigation.navigate("Add")} className="p-2 px-3 bg-white border border-gray-200 rounded-full">
-            <Text>Add Transaction</Text>
+          <TouchableOpacity onPress={() => navigation.navigate("Add")} className="p-2 px-3 bg-[#6620EE] border border-gray-200 rounded-full">
+            <Text className="text-white font-bold">Add Transaction</Text>
           </TouchableOpacity>
         </View>
-        <View style={{height: 430}}>
+        <View style={{height: 340}}>
           <FlatList 
             data={transactionsData}
             ListEmptyComponent={<EmptyList message={"You have not added any transactions"}/>}
