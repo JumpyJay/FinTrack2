@@ -24,13 +24,14 @@ Additionally, we aim to provide insightful analytics that offer valuable insight
 
 ## Features
 
-- **Expense Tracking**: Allow users to easily track their expenses, categorizing transactions and logging the amount spent.
-- **Budget Management**: Enable users to set and manage budgets for different spending categories, with visualizations showing budget vs. actual spending.
-- **Financial Goal Setting**: Allow users to set and track financial goals such as saving for a vacation, buying a new gadget, or paying off a loan.
-- **Expense Footnotes**: Allow users to add notes or receipts to transactions for better record-keeping.
-- **Budget Reminders**: Send notifications when nearing budget limits to offer insights into spending patterns.
-- **Gamification Elements**: Implement achievement badges, an EXP and level system to provide a sense of accomplishment.
-- **Leaderboard Feature**: Integrate a leaderboard ranking system based on levels and achievement badges.
+- **Expense Tracking**: Allow users to easily track their expenses, categorizing transactions and logging the amount spent. [Milestone 1]
+- **Budget Management**: Enable users to set and manage budgets for different spending categories, with visualizations showing budget vs. actual spending. [Milestone 2]
+- **Financial Goal Setting**: Allow users to set and track financial goals such as saving for a vacation, buying a new gadget, or paying off a loan. [Milestone 2]
+- **Graphs**: Allows users to visualise their expenses and to better manage their spending. [Milestone 2]
+- **Expense Footnotes**: Allow users to add notes or receipts to transactions for better record-keeping. [Milestone 3]
+- **Budget Reminders**: Send notifications when nearing budget limits to offer insights into spending patterns. [Milestone 3]
+- **Gamification Elements**: Implement achievement badges, an EXP and level system to provide a sense of accomplishment. [Milestone 3]
+- **Leaderboard Feature**: Integrate a leaderboard ranking system based on levels and achievement badges. [Milestone 3]
 
 ## Timeline
 
@@ -58,17 +59,17 @@ FinTrack utilizes a robust architecture integrating React Native for the front-e
 ### Backend
 
 - **Firebase & Firestore**: Store user financial data securely in the cloud.
-- **Authentication**: Manage user authentication and authorization.
-- **Realtime Synchronization**: Ensure immediate reflection of changes in the user's financial data.
-- **Cloud Functions**: Implement server-side logic for data validation and business rules.
-- **Security Rules**: Ensure only authenticated users can access and modify their financial data.
+- **Authentication**: Manage user authentication and authorization through Firebase.
+- **Realtime Synchronization**: Ensure immediate reflection of changes in the user's financial data through Firestore.
+- **Cloud Functions**: Implement server-side logic for data validation and business rules through Firebase and Firestore.
+- **Security Rules**: Ensure only authenticated users can access and modify their financial data through unique user IDs.
 
 ## Version Control with Git
 
 We use Git for version control to enable effective collaboration, track changes, and maintain the integrity of our codebase. 
 
 - **Branching Strategy**: Follow a consistent branching strategy and Git workflow.
-- **Commits**: Make frequent and descriptive commits.
+- **Commits**: Make daily and descriptive commits.
 - **Collaboration**: Encourage regular communication among team members.
 
 ## Setup [W.I.P]
@@ -80,6 +81,11 @@ We use Git for version control to enable effective collaboration, track changes,
     ```
 
 2. **Install dependencies**:
+    ```bash
+    npm install
+    ```
+
+2. **Install dependencies manually**:
     ```bash
     npx expo install expo-linear-gradient
     npx expo install firebase
