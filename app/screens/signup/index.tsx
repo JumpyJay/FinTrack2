@@ -1,15 +1,12 @@
 import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import BackButton from '@/components/BackButton'
-import { useNavigation } from '@react-navigation/native';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { FINTRACK_AUTH } from '@/firebaseConfig';
 
 export default function SignUpScreen() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const navigation = useNavigation();
 
   const handleSignUp = async () => {
     if (email && password) {

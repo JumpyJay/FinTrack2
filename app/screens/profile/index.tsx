@@ -1,5 +1,9 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, Button, SafeAreaView, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, Image, Button, ScrollView, TouchableOpacity } from 'react-native';
+import { Entypo } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+import { FINTRACK_AUTH } from '@/firebaseConfig';
+import { signOut } from 'firebase/auth';
 
 const ProfileScreen = () => {
   const userProfile = {
@@ -13,26 +17,78 @@ const ProfileScreen = () => {
     console.log('Edit Profile Pressed');
   };
 
+  const navigation = useNavigation();
+  const handleLogOut = async () => {
+    await signOut(FINTRACK_AUTH);
+    navigation.navigate("Welcome")
+  }
+
   return (
-    <SafeAreaView style={styles.safeArea}>
-      <ScrollView contentContainerStyle={styles.scrollContainer}>
-        <View style={styles.profileContainer}>
+    <View className="flex-1">
+      <ScrollView className="grow">
+        <TouchableOpacity className="flex-row items-center px-8 py-4 mb-3 bg-white">
           <Image source={{ uri: userProfile.avatar }} style={styles.avatar} />
-          <Text style={styles.name}>{userProfile.name}</Text>
-          <Text style={styles.email}>{userProfile.email}</Text>
+          <View className="flex-col px-12">
+            <Text className="text-2xl font-bold">{userProfile.name}</Text>
+            <Text className="px-1.5" style={styles.email}>{userProfile.email}</Text>
+          </View>
+          <Entypo name="chevron-right" size={24} color="black" />
+        </TouchableOpacity>
+        <TouchableOpacity className="px-8 py-2 bg-white flex-row justify-between">
+          <Text className="text-xl">Email and Password</Text>
+          <Entypo name="chevron-right" size={24} color="gray" />
+        </TouchableOpacity>
+        <TouchableOpacity className="px-8 py-2 bg-white flex-row justify-between">
+          <Text className="text-xl">Saved</Text>
+          <Entypo name="chevron-right" size={24} color="gray" />
+        </TouchableOpacity>
+        <View className="px-8 py-1">
+          <Text className="text-xl text-gray-700">APP OPTIONS</Text>
         </View>
-        <View style={styles.detailsContainer}>
-          <Text style={styles.sectionTitle}>Profile Details</Text>
-          {/* Add more profile details as needed */}
-          <Text style={styles.detail}>Membership: Premium</Text>
-          <Text style={styles.detail}>Joined: January 2023</Text>
-          <Text style={styles.detail}>Total Spendings: $1500</Text>
+        <TouchableOpacity className="px-8 py-2 bg-white flex-row justify-between">
+          <Text className="text-xl">Passcode</Text>
+          <Entypo name="chevron-right" size={24} color="gray" />
+        </TouchableOpacity>
+        <TouchableOpacity className="px-8 py-2 bg-white flex-row justify-between">
+          <Text className="text-xl">Notifications</Text>
+          <Entypo name="chevron-right" size={24} color="gray" />
+        </TouchableOpacity>
+        <View className="px-8 py-1">
+          <Text className="text-xl text-gray-700">OTHERS</Text>
         </View>
-        <View style={styles.buttonContainer}>
-          <Button title="Edit Profile" onPress={handleEditProfile} color="#6200EE" />
+        <TouchableOpacity className="px-8 py-2 bg-white flex-row justify-between">
+          <Text className="text-xl">Contact Support</Text>
+          <Entypo name="chevron-right" size={24} color="gray" />
+        </TouchableOpacity>
+        <TouchableOpacity className="px-8 py-2 bg-white flex-row justify-between">
+          <Text className="text-xl">Refer a Friend</Text>
+          <Entypo name="chevron-right" size={24} color="gray" />
+        </TouchableOpacity>
+        <TouchableOpacity className="px-8 py-2 bg-white flex-row justify-between">
+          <Text className="text-xl">FAQ</Text>
+          <Entypo name="chevron-right" size={24} color="gray" />
+        </TouchableOpacity>
+        <TouchableOpacity className="px-8 py-2 bg-white flex-row justify-between">
+          <Text className="text-xl">Privacy & Security</Text>
+          <Entypo name="chevron-right" size={24} color="gray" />
+        </TouchableOpacity>
+        <TouchableOpacity className="px-8 py-2 bg-white flex-row justify-between">
+          <Text className="text-xl">About FinTrack</Text>
+          <Entypo name="chevron-right" size={24} color="gray" />
+        </TouchableOpacity>
+        <View className="mb-3 px-8 py-2 bg-white flex-row justify-between">
+          <Text className="text-xl">Version</Text>
+          <Text className="text-xl">0.0.1</Text>
         </View>
+        <TouchableOpacity className="mb-3 px-4 py-2 bg-white items-center">
+          <Text className="text-xl font-bold text-red-600">Delete Account</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={handleLogOut} className="mb-3 px-4 py-2 bg-white items-center">
+          <Text className="text-xl font-bold text-[#6620EE]">Log Out</Text>
+        </TouchableOpacity> 
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 };
 
@@ -52,10 +108,9 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
   avatar: {
-    width: 100,
-    height: 100,
+    width: 60,
+    height: 60,
     borderRadius: 50,
-    marginBottom: 15,
   },
   name: {
     fontSize: 24,

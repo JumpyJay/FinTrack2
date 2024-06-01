@@ -1,6 +1,7 @@
 import EmptyList from '@/components/EmptyList';
+import { FINTRACK_AUTH } from '@/firebaseConfig';
 import { useNavigation } from '@react-navigation/native';
-import { StatusBar } from 'expo-status-bar';
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import { Text, View, Image, TouchableOpacity, FlatList } from 'react-native';
 
@@ -14,13 +15,20 @@ const transactionsData = [
   { id: "7", description: "Milk Tea with Pearl", amount: -10, date: "2024-05-05" },
 ];
 
-export default function App() {
+export default function HomeScreen() {
   const navigation = useNavigation();
+  const handleLogOut = async () => {
+    await signOut(FINTRACK_AUTH);
+    navigation.navigate("Welcome")
+  }
+  
   return (
     <View className="flex-1 bg-white">
       <View className="flex-row justify-between items-center bg-white p-4">
         <Text className="font-bold text-3xl shadow-sm text-[#6200EE]">FinTrack</Text>
-        <StatusBar style="auto" />
+        <TouchableOpacity onPress={handleLogOut} className="p-2 px-3 bg-white border border-gray-200 rounded-full">
+          <Text>Logout</Text>
+        </TouchableOpacity>
       </View>
       <View className="flex-row justify-center items-center bg-blue-200 rounded-xl mx-4 mb-4">
         <Image source={require('../../../assets/images/savings.png')} className="h-60 w-60" />
@@ -28,7 +36,7 @@ export default function App() {
       <View className="px-4 space-y-3">
         <View className="flex-row justify-between">
           <Text className="font-bold text-xl">Recent Spendings</Text>
-          <TouchableOpacity onPress={() => navigation.navigate("Add")}className="p-2 px-3 bg-white border border-gray-200 rounded-full">
+          <TouchableOpacity onPress={() => navigation.navigate("Add")} className="p-2 px-3 bg-white border border-gray-200 rounded-full">
             <Text>Add Transaction</Text>
           </TouchableOpacity>
         </View>

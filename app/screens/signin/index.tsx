@@ -1,7 +1,6 @@
 import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import BackButton from '@/components/BackButton'
-import { useNavigation } from '@react-navigation/native';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { FINTRACK_AUTH } from '@/firebaseConfig';
 

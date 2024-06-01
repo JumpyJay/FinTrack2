@@ -18,13 +18,13 @@ export default function Navigation() {
   const dispatch = useDispatch();
 
   onAuthStateChanged(FINTRACK_AUTH, u => {
-    // console.log("got user:", u);
+    console.log("got user:", u);
     dispatch(setUser(u))
   })
 
   if (user) {
     return (
-      <Stack.Navigator initialRouteName="Main" screenOptions={{ headerShown: false }}>
+      <Stack.Navigator initialRouteName="Main" screenOptions={{ headerShown: false}}>
         <Stack.Screen name="Main" component={BottomNavigation} />
         <Stack.Screen name="Add" component={AddScreen} />
       </Stack.Navigator>
