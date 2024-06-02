@@ -6,16 +6,16 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 export default function WelcomeScreen() {
   const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
   return (
-    <View className="flex-1 justify-center items-center bg-white">
+    <View className="flex-1 justify-center items-center bg-[#e0f7e9]">
       <StatusBar barStyle="dark-content" />
       <View className="h-full flex justify-around">
         <View className="flex-row justify-center mt-10">
           <Image
             source={require("../../../assets/images/fintrack-logo.png")}
-            className="h-96 w-96 shadow"
+            style={{resizeMode: 'contain'}} className="h-48 w-96"
           />
         </View>
-        <View className="mx-5 mb-20">
+        <View className="mx-5 pb-20">
           <Text className="text-center font-bold text-4xl mb-10">FinTrack</Text>
           <TouchableOpacity
             onPress={() => navigation.navigate("SignIn")}

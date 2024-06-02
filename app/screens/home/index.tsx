@@ -71,7 +71,7 @@ export default function HomeScreen() {
       <View className="flex-row justify-center items-center bg-blue-200 rounded-xl mx-4 mb-4">
         <Image
           source={require("../../../assets/images/savings.png")}
-          className="h-60 w-60"
+          style={{resizeMode: 'contain'}} className="h-60 w-60"
         />
       </View>
       <View className="px-4 space-y-3 rounded-xl mx-4 mb-4 py-4 bg-white">

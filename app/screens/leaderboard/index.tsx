@@ -26,7 +26,7 @@ const LeaderboardScreen = () => {
 
   return (
     <View className="flex-1">
-      <View className="flex-1 p-4 bg-white">
+      <View className="flex-1 p-2 bg-white">
         <Text className="font-bold text-3xl text-center mb-2 text-[#6200EE] mb-2">Leaderboard</Text>
         <View className="bg-white p-4 h-4/5">
           <FlatList

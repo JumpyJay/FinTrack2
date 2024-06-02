@@ -79,7 +79,7 @@ export default function AddScreen() {
   ///////////////////////////////////////////
 
   return (
-    <View className="h-full bg-white justify-between">
+    <View className="h-full bg-[#e0f7e9] justify-between">
       <View className="flex mx-4 mt-5">
         <View>
           <View className="absolute z-10">
@@ -93,7 +93,7 @@ export default function AddScreen() {
         <View className="flex-row justify-center my-3 mt-5">
           <Image
             source={require("../../../assets/images/fintrack-logo.png")}
-            className="h-32 w-72"
+            style={{resizeMode: 'contain'}} className="h-32 w-72"
           />
         </View>
 

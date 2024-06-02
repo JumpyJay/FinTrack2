@@ -29,7 +29,7 @@ export default function SignUpScreen() {
     }
   };
   return (
-    <View className="h-full justify-between">
+    <View className="h-full bg-[#e0f7e9] justify-between">
       <StatusBar barStyle="light-content" />
       <View className="flex mx-4 mt-6">
         <View>

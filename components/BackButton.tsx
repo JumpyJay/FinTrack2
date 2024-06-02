@@ -9,7 +9,7 @@ export default function BackButton() {
   return (
     <TouchableOpacity
       onPress={() => navigation.goBack()}
-      className="bg-white rounded-full h-8 w-8"
+      className="bg-[#e0f7e9] rounded-full h-8 w-8"
     >
       <Entypo name="chevron-left" size={30} color="#6200EE" />
     </TouchableOpacity>
