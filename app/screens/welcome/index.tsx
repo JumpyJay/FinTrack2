@@ -1,13 +1,13 @@
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity, StatusBar } from "react-native";
 import React from "react";
 import { ParamListBase, useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-// Work in Progress.
 
 export default function WelcomeScreen() {
   const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
   return (
-    <View className="flex-1 bg-white">
+    <View className="flex-1 justify-center items-center bg-white">
+      <StatusBar barStyle="dark-content" />
       <View className="h-full flex justify-around">
         <View className="flex-row justify-center mt-10">
           <Image

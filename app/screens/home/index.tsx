@@ -10,7 +10,7 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { signOut } from "firebase/auth";
 import { getDocs, query, where } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
-import { Text, View, Image, TouchableOpacity, FlatList } from "react-native";
+import { Text, View, Image, TouchableOpacity, FlatList, ScrollView } from "react-native";
 import { useSelector } from "react-redux";
 
 // const transactionsData = [
@@ -51,8 +51,12 @@ export default function HomeScreen() {
     navigation.navigate("Welcome");
   };
 
+  const handleRecentTransactions = () => {
+    navigation.navigate("Transactions")
+  }
+
   return (
-    <View className="flex-1 bg-[#6200EE]">
+    <ScrollView className="flex-1 bg-[#6200EE]">
       <View className="flex-row justify-between items-center bg-[#6200EE] p-4">
         <Text className="font-bold text-3xl shadow-sm text-white">
           FinTrack
@@ -80,7 +84,7 @@ export default function HomeScreen() {
             <Text className="text-white font-bold">Add Transaction</Text>
           </TouchableOpacity>
         </View>
-        <View style={{ height: 340 }}>
+        <View style={{ height: 300 }}>
           <FlatList
             data={transactionsData}
             ListEmptyComponent={
@@ -91,7 +95,7 @@ export default function HomeScreen() {
             keyExtractor={(item: any) => item.id}
             renderItem={({ item }) => {
               return (
-                <TouchableOpacity className="bg-white p-3 rounded-2xl mb-3 shadown-sm">
+                <TouchableOpacity onPress={handleRecentTransactions} className="bg-white p-3 rounded-2xl mb-3 shadown-sm">
                   <View className="flex-row justify-between">
                     <View className="flex-col">
                       <Text className="font-bold text-lg">
@@ -113,6 +117,6 @@ export default function HomeScreen() {
           />
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 }

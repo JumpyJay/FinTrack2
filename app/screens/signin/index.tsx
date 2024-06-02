@@ -1,4 +1,4 @@
-import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
+import { View, Text, Image, TextInput, TouchableOpacity, StatusBar } from "react-native";
 import React, { useState } from "react";
 import BackButton from "@/components/BackButton";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -30,6 +30,7 @@ export default function SignInScreen() {
   };
   return (
     <View className="h-full justify-between">
+      <StatusBar barStyle="light-content" />
       <View className="flex mx-4 mt-6">
         <View>
           <View className="absolute z-10">

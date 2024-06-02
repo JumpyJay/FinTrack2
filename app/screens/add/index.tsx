@@ -116,6 +116,7 @@ export default function AddScreen() {
           <TextInput
             value={description}
             placeholder="Write a description"
+            placeholderTextColor="#b7b7ba"
             onChangeText={(value) => setDescription(value)}
             className="p-4 bg-white rounded-full mb-3 border"
           />
@@ -127,7 +128,7 @@ export default function AddScreen() {
               backgroundColor: "white",
               borderRadius: 25,
               borderWidth: 1,
-              borderColor: "#d3d3d3",
+              borderColor: "black",
               marginBottom: 16,
             }}
           >
@@ -150,6 +151,7 @@ export default function AddScreen() {
           <TextInput
             value={amount}
             placeholder="$10.00"
+            placeholderTextColor="#b7b7ba"
             onChangeText={(value) => setAmount(value)}
             className="p-4 bg-white rounded-full mb-3 border"
           />

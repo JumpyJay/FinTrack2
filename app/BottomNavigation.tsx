@@ -58,7 +58,7 @@ const BottomNavigation = () => {
         },
         tabBarActiveTintColor: "#6200EE",
         tabBarInactiveTintColor: "gray",
-        tabBarStyle: { paddingBottom: 0, marginBottom: 0, paddingTop: 30 },
+        tabBarStyle: { paddingBottom: 0, marginBottom: 0, paddingTop: 20 },
       })}
     >
       <Tab.Screen

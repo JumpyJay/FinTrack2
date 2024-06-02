@@ -39,7 +39,7 @@ export default function Navigation() {
         initialRouteName="Welcome"
         screenOptions={{ headerShown: false }}
       >
-        <Stack.Screen name="Welcome" component={WelcomeScreen} />
+        <Stack.Screen name="Welcome" component={WelcomeScreen}/>
         <Stack.Screen
           name="SignIn"
           component={SignInScreen}

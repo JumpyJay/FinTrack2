@@ -1,4 +1,4 @@
-import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
+import { View, Text, Image, TextInput, TouchableOpacity, StatusBar } from "react-native";
 import React, { useState } from "react";
 import BackButton from "@/components/BackButton";
 import { createUserWithEmailAndPassword } from "firebase/auth";
@@ -22,7 +22,7 @@ export default function SignUpScreen() {
         dispatch(setUserLoading(false));
       } catch (e) {
         dispatch(setUserLoading(false));
-        alert("Invalid Email and Password");
+        alert("Email has already been signed up!");
       }
     } else {
       alert("You must have both Email and Password to sign up!");
@@ -30,6 +30,7 @@ export default function SignUpScreen() {
   };
   return (
     <View className="h-full justify-between">
+      <StatusBar barStyle="light-content" />
       <View className="flex mx-4 mt-6">
         <View>
           <View className="absolute z-10">

@@ -1,8 +1,11 @@
-# FinTrack by Finnovations
+# FinTrack by Finnovations (6008)
 
 FinTrack is a comprehensive budget tracking and financial management application designed to empower users to take control of their finances seamlessly.
 
 This Independent Software Development Project (CP2106) [a.k.a. Orbital] is done up by Jaymeson Koh, and Kanit Bhudisanont. Advised by Aakash Ramaswamy. The code uses React Native for mobile development.
+
+## Proposed Level of Achievement
+Apollo 11
 
 ## Motivation
 
@@ -18,9 +21,9 @@ Additionally, we aim to provide insightful analytics that offer valuable insight
 
 ## User Stories
 
-- **Expense Tracking**: As a budget-conscious individual who wants to track expenses accurately, I want to easily categorize transactions and log the amount spent.
-- **Financial Goals**: As a person with financial aspirations such as saving for a vacation or a BTO, I want to set and track financial goals within the system.
-- **Budget Management**: As someone who aims to stick to a budget, I want to set and manage budgets for various spending categories using visual aids like graphs or charts.
+1. **Expense Tracking**: As a budget-conscious individual who wants to track expenses accurately, I want to easily categorize transactions and log the amount spent.
+2. **Financial Goals**: As a person with financial aspirations such as saving for a vacation or a BTO, I want to set and track financial goals within the system.
+3. **Budget Management**: As someone who aims to stick to a budget, I want to set and manage budgets for various spending categories using visual aids like graphs or charts.
 
 ## Features
 
@@ -33,11 +36,20 @@ Additionally, we aim to provide insightful analytics that offer valuable insight
 - **Gamification Elements**: Implement achievement badges, an EXP and level system to provide a sense of accomplishment. [Milestone 3]
 - **Leaderboard Feature**: Integrate a leaderboard ranking system based on levels and achievement badges. [Milestone 3]
 
-## Timeline
+## Proposed Program Flow
+
+## Development Plan
 
 - **Milestone 1 (June 3)**: Ideation/Technical proof of concept.
 - **Milestone 2 (July 1)**: Prototyping with core features.
 - **Milestone 3 (July 29)**: Extension with additional features.
+
+## Proof of Concept
+A walkthrough of our Technical Proof of Concept is available through the following YouTube link:
+
+## Project Log
+Our project log is accessible through the following Google Sheets Link:
+https://docs.google.com/spreadsheets/d/1ab0G22-dswjvNvjWRIXbf2VOejFEeKww/edit?usp=sharing&ouid=107310411433945542483&rtpof=true&sd=true
 
 ## Tech Stack
 
@@ -72,7 +84,7 @@ We use Git for version control to enable effective collaboration, track changes,
 - **Commits**: Make daily and descriptive commits.
 - **Collaboration**: Encourage regular communication among team members.
 
-## Setup [W.I.P]
+## Setup
 
 1. **Clone the repository**:
     ```bash
@@ -87,6 +99,7 @@ We use Git for version control to enable effective collaboration, track changes,
 
 2. **Install dependencies manually**:
     ```bash
+    npm install
     npx expo install expo-linear-gradient
     npx expo install firebase
     npm i @gluestack-ui/themed-native-base react-native-svg@13.4.0
@@ -104,9 +117,6 @@ We use Git for version control to enable effective collaboration, track changes,
     ```bash
     npm start
     ```
-
-4. **Configure Firebase**:
-    - Add your Firebase configuration details to `firebaseConfig.js`.
 
 ## Authors
 
