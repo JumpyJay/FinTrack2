@@ -56,7 +56,7 @@ export default function HomeScreen() {
   }
 
   return (
-    <ScrollView className="flex-1 bg-[#6200EE]">
+    <View className="flex-1 bg-[#6200EE]">
       <View className="flex-row justify-between items-center bg-[#6200EE] p-4">
         <Text className="font-bold text-3xl shadow-sm text-white">
           FinTrack
@@ -117,6 +117,6 @@ export default function HomeScreen() {
           />
         </View>
       </View>
-    </ScrollView>
+    </View>
   );
 }
