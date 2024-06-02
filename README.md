@@ -114,7 +114,7 @@ We use Git for version control to enable effective collaboration, track changes,
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/your-username/finnovations.git
+    git clone https://github.com/JumpyJay/Finnovations.git
     cd finnovations
     ```
 
@@ -143,6 +143,9 @@ We use Git for version control to enable effective collaboration, track changes,
     ```bash
     npm start
     ```
+
+4. **Download Expo Go on your device or Test with iOS Simulator**:
+    Scan the QR Code and Launch Expo Go to Test our iOS App.
 
 ## Authors
 
