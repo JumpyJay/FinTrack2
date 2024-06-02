@@ -71,11 +71,11 @@ Additionally, we aim to provide insightful analytics that offer valuable insight
 
 ## Proof of Concept
 A walkthrough of our Technical Proof of Concept is available through the following Google Drive link:
-https://drive.google.com/file/d/1yN9K8pLtNTNDFsCBoA9PLeT-Yusol9wy/view?usp=sharing
+[Technical Proof of Concept](https://drive.google.com/file/d/1yN9K8pLtNTNDFsCBoA9PLeT-Yusol9wy/view?usp=sharing)
 
 ## Project Log
 Our project log is accessible through the following Google Sheets Link:
-https://docs.google.com/spreadsheets/d/1ab0G22-dswjvNvjWRIXbf2VOejFEeKww/edit?usp=sharing&ouid=107310411433945542483&rtpof=true&sd=true
+[Project Log](https://docs.google.com/spreadsheets/d/1ab0G22-dswjvNvjWRIXbf2VOejFEeKww/edit?usp=sharing&ouid=107310411433945542483&rtpof=true&sd=true)
 
 ## Tech Stack
 
