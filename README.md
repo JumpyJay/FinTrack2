@@ -25,16 +25,25 @@ Additionally, we aim to provide insightful analytics that offer valuable insight
 2. **Financial Goals**: As a person with financial aspirations such as saving for a vacation or a BTO, I want to set and track financial goals within the system.
 3. **Budget Management**: As someone who aims to stick to a budget, I want to set and manage budgets for various spending categories using visual aids like graphs or charts.
 
+## Project Scope
+- FinTrack is a comprehensive financial management app designed to empower users with seamless expense tracking, budget management, and financial goal setting, enhanced by engaging gamification elements.
+
+- FinTrack is an innovative financial management application developed to help users gain control over their personal finances through intuitive and user-friendly features. The app enables users to accurately track their expenses by categorizing transactions and logging amounts spent. It also allows for setting and managing budgets across various spending categories with visual aids such as graphs and charts. Users can set and track financial goals, whether it's saving for a vacation, purchasing a new gadget, or paying off a loan. FinTrack incorporates gamification elements, including achievement badges and a leaderboard system, to make financial management engaging and motivating. By providing insightful analytics and fostering a supportive community around financial wellness, FinTrack aims to make personal finance accessible and enjoyable for everyone, especially beginners seeking financial independence.
+
 ## Features
 
-- **Expense Tracking**: Allow users to easily track their expenses, categorizing transactions and logging the amount spent. [Milestone 1]
-- **Budget Management**: Enable users to set and manage budgets for different spending categories, with visualizations showing budget vs. actual spending. [Milestone 2]
-- **Financial Goal Setting**: Allow users to set and track financial goals such as saving for a vacation, buying a new gadget, or paying off a loan. [Milestone 2]
-- **Graphs**: Allows users to visualise their expenses and to better manage their spending. [Milestone 2]
-- **Expense Footnotes**: Allow users to add notes or receipts to transactions for better record-keeping. [Milestone 3]
-- **Budget Reminders**: Send notifications when nearing budget limits to offer insights into spending patterns. [Milestone 3]
-- **Gamification Elements**: Implement achievement badges, an EXP and level system to provide a sense of accomplishment. [Milestone 3]
-- **Leaderboard Feature**: Integrate a leaderboard ranking system based on levels and achievement badges. [Milestone 3]
+### Milestone 1
+- **Expense Tracking**: Allow users to easily track their expenses, categorizing transactions and logging the amount spent.
+
+### Milestone 2
+- **Budget Management**: Enable users to set and manage budgets for different spending categories, with visualizations showing budget vs. actual spending.
+- **Financial Goal Setting**: Allow users to set and track financial goals such as saving for a vacation, buying a new gadget, or paying off a loan. 
+
+### Milestone 3
+- **Expense Footnotes**: Allow users to add notes or receipts to transactions for better record-keeping.
+- **Budget Reminders**: Send notifications when nearing budget limits to offer insights into spending patterns.
+- **Gamification Elements**: Implement achievement badges, an EXP and level system to provide a sense of accomplishment.
+- **Leaderboard Feature**: Integrate a leaderboard ranking system based on levels and achievement badges.
 
 ## Proposed Program Flow
 
