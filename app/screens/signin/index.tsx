@@ -28,6 +28,11 @@ export default function SignInScreen() {
       alert("Please Enter Email and Password");
     }
   };
+
+  const handleForgotPassword = () => {
+    alert("Feature coming soon!");
+  };
+
   return (
     <View className="h-full bg-[#e0f7e9] justify-between">
       <StatusBar barStyle="light-content" />
@@ -66,7 +71,7 @@ export default function SignInScreen() {
             onChangeText={(value) => setPassword(value)}
             className="p-4 bg-white rounded-full mb-3"
           />
-          <TouchableOpacity className="flex-row justify-end">
+          <TouchableOpacity onPress={handleForgotPassword} className="flex-row justify-end">
             <Text>Forget Password</Text>
           </TouchableOpacity>
         </View>
