@@ -1,5 +1,7 @@
 # FinTrack by Finnovations (6008)
 
+![Logo of FinTrack](/assets/images/fintrack-logo.png)
+
 FinTrack is a comprehensive budget tracking and financial management application designed to empower users to take control of their finances seamlessly.
 
 This Independent Software Development Project (CP2106) [a.k.a. Orbital] is done up by Jaymeson Koh, and Kanit Bhudisanont. Advised by Aakash Ramaswamy. The code uses React Native for mobile development.
@@ -46,6 +48,7 @@ Additionally, we aim to provide insightful analytics that offer valuable insight
 - **Leaderboard Feature**: Integrate a leaderboard ranking system based on levels and achievement badges.
 
 ## Proposed Program Flow
+![Proposed Program Flow of FinTrack](/assets/images/proposed-program-flow.png)
 
 ## Development Plan
 - **Week 0 (6 May ~ 12 May)**: Research Tech Stack & Prepare Liftoff Poster and Video
