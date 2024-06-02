@@ -1,8 +1,11 @@
-# FinTrack by Finnovations
+# FinTrack by Finnovations (6008)
 
 FinTrack is a comprehensive budget tracking and financial management application designed to empower users to take control of their finances seamlessly.
 
 This Independent Software Development Project (CP2106) [a.k.a. Orbital] is done up by Jaymeson Koh, and Kanit Bhudisanont. Advised by Aakash Ramaswamy. The code uses React Native for mobile development.
+
+## Proposed Level of Achievement
+Apollo 11
 
 ## Motivation
 
@@ -18,25 +21,57 @@ Additionally, we aim to provide insightful analytics that offer valuable insight
 
 ## User Stories
 
-- **Expense Tracking**: As a budget-conscious individual who wants to track expenses accurately, I want to easily categorize transactions and log the amount spent.
-- **Financial Goals**: As a person with financial aspirations such as saving for a vacation or a BTO, I want to set and track financial goals within the system.
-- **Budget Management**: As someone who aims to stick to a budget, I want to set and manage budgets for various spending categories using visual aids like graphs or charts.
+1. **Expense Tracking**: As a budget-conscious individual who wants to track expenses accurately, I want to easily categorize transactions and log the amount spent.
+2. **Financial Goals**: As a person with financial aspirations such as saving for a vacation or a BTO, I want to set and track financial goals within the system.
+3. **Budget Management**: As someone who aims to stick to a budget, I want to set and manage budgets for various spending categories using visual aids like graphs or charts.
+
+## Project Scope
+- FinTrack is a comprehensive financial management app designed to empower users with seamless expense tracking, budget management, and financial goal setting, enhanced by engaging gamification elements.
+
+- FinTrack is an innovative financial management application developed to help users gain control over their personal finances through intuitive and user-friendly features. The app enables users to accurately track their expenses by categorizing transactions and logging amounts spent. It also allows for setting and managing budgets across various spending categories with visual aids such as graphs and charts. Users can set and track financial goals, whether it's saving for a vacation, purchasing a new gadget, or paying off a loan. FinTrack incorporates gamification elements, including achievement badges and a leaderboard system, to make financial management engaging and motivating. By providing insightful analytics and fostering a supportive community around financial wellness, FinTrack aims to make personal finance accessible and enjoyable for everyone, especially beginners seeking financial independence.
 
 ## Features
 
+### Milestone 1
 - **Expense Tracking**: Allow users to easily track their expenses, categorizing transactions and logging the amount spent.
+
+### Milestone 2
 - **Budget Management**: Enable users to set and manage budgets for different spending categories, with visualizations showing budget vs. actual spending.
-- **Financial Goal Setting**: Allow users to set and track financial goals such as saving for a vacation, buying a new gadget, or paying off a loan.
+- **Financial Goal Setting**: Allow users to set and track financial goals such as saving for a vacation, buying a new gadget, or paying off a loan. 
+
+### Milestone 3
 - **Expense Footnotes**: Allow users to add notes or receipts to transactions for better record-keeping.
 - **Budget Reminders**: Send notifications when nearing budget limits to offer insights into spending patterns.
 - **Gamification Elements**: Implement achievement badges, an EXP and level system to provide a sense of accomplishment.
 - **Leaderboard Feature**: Integrate a leaderboard ranking system based on levels and achievement badges.
 
-## Timeline
+## Proposed Program Flow
 
-- **Milestone 1 (June 3)**: Ideation/Technical proof of concept.
-- **Milestone 2 (July 1)**: Prototyping with core features.
-- **Milestone 3 (July 29)**: Extension with additional features.
+## Development Plan
+- **Week 0 (6 May ~ 12 May)**: Research Tech Stack & Prepare Liftoff Poster and Video
+- **Week 1 (13 May ~ 19 May)**: Prepare Liftoff Poster and Video & Learning necessary skills
+- **Week 2 (20 May ~ 26 May)**: Prototype Creation
+- **Week 3 (27 May ~ 2 Jun)**: Integration of Frontend-Backend Integration with Firebase & Firestore
+- **Week 4 (June 3) [Milestone 1]**: - Ideation (README), Proof of concept: Authentication method with email and password, Navigation through different essential pages, Basic React Native design, Retrieve user data from Firestore database
+- **Week 4 (3 Jun ~ 9 Jun)**: TBD
+- **Week 5 (10 Jun ~ 16 Jun)**: TBD
+- **Week 6 (17 Jun ~ 23 Jun)**: TBD
+- **Week 7 (24 Jun ~ 30 Jun)**: TBD
+- **Week 8 Milestone 2 (July 1)**: Prototyping with core features.
+- **Week 8 (1 Jul ~ 7 Jul)**: TBD
+- **Week 9 (8 Jul ~ 14 Jul)**: TBD
+- **Week 10 (15 Jul ~ 21 Jul)**: TBD
+- **Week 11 (22 Jul ~ 28 Jul)**: TBD
+- **Week 12 (29 Jul ~ 4 Aug)**: TBD
+- **Week 12 Milestone 3 (July 29)**: Extension with additional features.
+- **Splashdown (28 August)**
+
+## Proof of Concept
+A walkthrough of our Technical Proof of Concept is available through the following YouTube link:
+
+## Project Log
+Our project log is accessible through the following Google Sheets Link:
+https://docs.google.com/spreadsheets/d/1ab0G22-dswjvNvjWRIXbf2VOejFEeKww/edit?usp=sharing&ouid=107310411433945542483&rtpof=true&sd=true
 
 ## Tech Stack
 
@@ -58,20 +93,20 @@ FinTrack utilizes a robust architecture integrating React Native for the front-e
 ### Backend
 
 - **Firebase & Firestore**: Store user financial data securely in the cloud.
-- **Authentication**: Manage user authentication and authorization.
-- **Realtime Synchronization**: Ensure immediate reflection of changes in the user's financial data.
-- **Cloud Functions**: Implement server-side logic for data validation and business rules.
-- **Security Rules**: Ensure only authenticated users can access and modify their financial data.
+- **Authentication**: Manage user authentication and authorization through Firebase.
+- **Realtime Synchronization**: Ensure immediate reflection of changes in the user's financial data through Firestore.
+- **Cloud Functions**: Implement server-side logic for data validation and business rules through Firebase and Firestore.
+- **Security Rules**: Ensure only authenticated users can access and modify their financial data through unique user IDs.
 
 ## Version Control with Git
 
 We use Git for version control to enable effective collaboration, track changes, and maintain the integrity of our codebase. 
 
 - **Branching Strategy**: Follow a consistent branching strategy and Git workflow.
-- **Commits**: Make frequent and descriptive commits.
+- **Commits**: Make daily and descriptive commits.
 - **Collaboration**: Encourage regular communication among team members.
 
-## Setup [W.I.P]
+## Setup
 
 1. **Clone the repository**:
     ```bash
@@ -84,13 +119,26 @@ We use Git for version control to enable effective collaboration, track changes,
     npm install
     ```
 
+2. **Install dependencies manually**:
+    ```bash
+    npm install
+    npx expo install expo-linear-gradient
+    npx expo install firebase
+    npm i @gluestack-ui/themed-native-base react-native-svg@13.4.0
+    npm install react-native-chart-kit
+    npm install @react-navigation/bottom-tabs
+    npm install @react-navigation/native-stack
+    npx expo install firebase
+    npm install nativewind
+    npm install --save-dev tailwindcss@3.3.2
+    npm install @reduxjs/toolkit react-redux
+    npm install @react-native-async-storage/async-storage
+    ```
+
 3. **Start the Expo development server**:
     ```bash
     npm start
     ```
-
-4. **Configure Firebase**:
-    - Add your Firebase configuration details to `firebaseConfig.js`.
 
 ## Authors
 
