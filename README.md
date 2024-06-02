@@ -70,7 +70,8 @@ Additionally, we aim to provide insightful analytics that offer valuable insight
 - **Splashdown (28 August)**
 
 ## Proof of Concept
-A walkthrough of our Technical Proof of Concept is available through the following YouTube link:
+A walkthrough of our Technical Proof of Concept is available through the following Google Drive link:
+https://drive.google.com/file/d/1yN9K8pLtNTNDFsCBoA9PLeT-Yusol9wy/view?usp=sharing
 
 ## Project Log
 Our project log is accessible through the following Google Sheets Link:
@@ -122,7 +123,7 @@ We use Git for version control to enable effective collaboration, track changes,
     npm install
     ```
 
-2. **Install dependencies manually**:
+2. **Install dependencies (manually)**:
     ```bash
     npm install
     npx expo install expo-linear-gradient
