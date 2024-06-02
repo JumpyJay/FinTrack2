@@ -118,7 +118,7 @@ We use Git for version control to enable effective collaboration, track changes,
 
 1. **Download our Source Code**:
     ```bash
-    [source code](https://drive.google.com/file/d/1pPu4OmLQR1BFgnkeAAOPuZpB-Ys1wumT/view?usp=sharing).
+    https://drive.google.com/file/d/1pPu4OmLQR1BFgnkeAAOPuZpB-Ys1wumT/view?usp=sharing
     ```
 
 2. **Extract the ZIP**
