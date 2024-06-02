@@ -47,7 +47,7 @@ export default function TransactionsScreen() {
 
   return (
     <View className="flex-1">
-      <View className="flex-1 bg-white p-4">
+      <View className="flex-1 bg-white p-2">
         <Text className="font-bold text-3xl text-[#6200EE] text-center mb-2">
           Transactions
         </Text>
@@ -61,7 +61,7 @@ export default function TransactionsScreen() {
           keyExtractor={(item: any) => item.id}
           renderItem={({ item }) => {
             return (
-              <View className="flex-row justify-between shadow-sm bg-white p-2">
+              <View className="flex-row justify-between shadow-sm bg-white p-4">
                 <View className="flex-col">
                   <Text className="font-bold text-lg">{item.description}</Text>
                   <Text className="font-sm">{item.date}</Text>
