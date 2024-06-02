@@ -53,16 +53,16 @@ Additionally, we aim to provide insightful analytics that offer valuable insight
 - **Week 2 (20 May ~ 26 May)**: Prototype Creation
 - **Week 3 (27 May ~ 2 Jun)**: Integration of Frontend-Backend Integration with Firebase & Firestore
 - **Week 4 (June 3) [Milestone 1]**: - Ideation (README), Proof of concept: Authentication method with email and password, Navigation through different essential pages, Basic React Native design, Retrieve user data from Firestore database
-- **Week 4 (3 Jun ~ 9 Jun)**: TBD
-- **Week 5 (10 Jun ~ 16 Jun)**: TBD
-- **Week 6 (17 Jun ~ 23 Jun)**: TBD
-- **Week 7 (24 Jun ~ 30 Jun)**: TBD
+- **Week 4 (3 Jun ~ 9 Jun)**: Work on Budget Management Feature
+- **Week 5 (10 Jun ~ 16 Jun)**: Work on Financial Goal Setting Feature
+- **Week 6 (17 Jun ~ 23 Jun)**: Test features and improvements
+- **Week 7 (24 Jun ~ 30 Jun)**: Improve UX
 - **Week 8 Milestone 2 (July 1)**: Prototyping with core features.
-- **Week 8 (1 Jul ~ 7 Jul)**: TBD
-- **Week 9 (8 Jul ~ 14 Jul)**: TBD
-- **Week 10 (15 Jul ~ 21 Jul)**: TBD
-- **Week 11 (22 Jul ~ 28 Jul)**: TBD
-- **Week 12 (29 Jul ~ 4 Aug)**: TBD
+- **Week 8 (1 Jul ~ 7 Jul)**: Expense Footnotes Feature
+- **Week 9 (8 Jul ~ 14 Jul)**: Budget Reminders Feature
+- **Week 10 (15 Jul ~ 21 Jul)**: Gamification Elements Feature
+- **Week 11 (22 Jul ~ 28 Jul)**: Leaderboard Feature
+- **Week 12 (29 Jul ~ 4 Aug)**: Testing & Improvement of UX
 - **Week 12 Milestone 3 (July 29)**: Extension with additional features.
 - **Splashdown (28 August)**
 
