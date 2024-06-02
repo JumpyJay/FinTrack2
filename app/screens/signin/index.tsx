@@ -44,7 +44,7 @@ export default function SignInScreen() {
         <View className="flex-row justify-center my-3 mt-5">
           <Image
             source={require("../../../assets/images/fintrack-logo.png")}
-            className="h-80 w-80"
+            style={{resizeMode: 'contain'}} className="h-80 w-80"
           />
         </View>
 
