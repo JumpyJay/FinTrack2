@@ -73,6 +73,8 @@ Additionally, we aim to provide insightful analytics that offer valuable insight
 A walkthrough of our Technical Proof of Concept is available through the following Google Drive link:
 [Technical Proof of Concept](https://drive.google.com/file/d/1yN9K8pLtNTNDFsCBoA9PLeT-Yusol9wy/view?usp=sharing)
 
+Furthermore, test our app by downloading the [source code](https://drive.google.com/file/d/1pPu4OmLQR1BFgnkeAAOPuZpB-Ys1wumT/view?usp=sharing).
+
 ## Project Log
 Our project log is accessible through the following Google Sheets Link:
 [Project Log](https://docs.google.com/spreadsheets/d/1ab0G22-dswjvNvjWRIXbf2VOejFEeKww/edit?usp=sharing&ouid=107310411433945542483&rtpof=true&sd=true)
@@ -111,6 +113,27 @@ We use Git for version control to enable effective collaboration, track changes,
 - **Collaboration**: Encourage regular communication among team members.
 
 ## Setup
+
+### Access through ZIP
+
+1. **Download our Source Code**:
+    ```bash
+    [source code](https://drive.google.com/file/d/1pPu4OmLQR1BFgnkeAAOPuZpB-Ys1wumT/view?usp=sharing).
+    ```
+
+2. **Extract the ZIP**
+
+3. **Launch Terminal**
+
+4. **Start the Expo development server**
+    ```bash
+    npm start
+    ```
+
+4. **Download Expo Go on your device or Test with iOS Simulator**:
+    Scan the QR Code and Launch Expo Go to Test our iOS App. 
+
+### Access through Repository
 
 1. **Clone the repository**:
     ```bash
