@@ -138,7 +138,7 @@ We use Git for version control to enable effective collaboration, track changes,
 1. **Clone the repository**:
     ```bash
     git clone https://github.com/JumpyJay/Finnovations.git
-    cd finnovations
+    cd Finnovations
     ```
 
 2. **Install dependencies**:
