@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "FinTrack",
-    "slug": "FinTrack",
+    "slug": "fintrack",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -16,7 +16,8 @@
       "supportsTablet": true,
       "infoPlist": {
         "UIViewControllerBasedStatusBarAppearance": true
-      }
+      },
+      "bundleIdentifier": "com.jumpyjay.fintrack"
     },
     "android": {
       "adaptiveIcon": {
@@ -34,6 +35,15 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "a12f6f92-73eb-4558-a671-362929c73e2e"
+      }
+    },
+    "owner": "jumpyjay"
   }
 }
