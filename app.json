@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "FinTrack",
-    "slug": "fintrack",
+    "slug": "fintrack-ihadqsugxjbkeial18v1",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -41,7 +41,7 @@
         "origin": false
       },
       "eas": {
-        "projectId": "a12f6f92-73eb-4558-a671-362929c73e2e"
+        "projectId": "6969cd26-5726-4d2f-a0f1-ecd69a93ccd4"
       }
     },
     "owner": "jumpyjay"
