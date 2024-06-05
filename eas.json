@@ -11,9 +11,6 @@
       "distribution": "internal"
     },
     "production": {
-      "andriod": {
-        "image": "latest"
-      },
       "ios": {
         "image": "latest"
       }
